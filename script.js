@@ -22,7 +22,7 @@ function convert(from, to) {
         if (to == 'Celcius')
             return celcius + ' C';
         if (to == 'Kelvin') {
-            return eval(celcius + 273.15).toFixed(4) + ' K';
+            return eval(parseFloat(celcius) + 273.15).toFixed(4) + ' K';
         }
         return input + ' F'
     }
@@ -31,7 +31,7 @@ function convert(from, to) {
         if (to == 'Celcius')
             return celcius + ' C'
         if (to == 'Fahrenheit')
-            return eval(celcius * 9 / 5 + 32).toFixed(4) + ' F'
+            return eval(parseFloat(celcius) * 9 / 5 + 32).toFixed(4) + ' F'
         return input + ' K'
     }
 }
