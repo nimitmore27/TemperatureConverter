@@ -1,14 +1,16 @@
-let inptxt = document.getElementById('inptxt');
-let outtxt = document.getElementById('outputtxt');
+const inptxt = document.getElementById('inptxt');
+const outtxt = document.getElementById('outputtxt');
 
-let choice = document.querySelectorAll('.list');
+const choice = document.querySelectorAll('.list');
+
+let input ;
 
 document.getElementById('body').addEventListener('change', () => {
     outtxt.value = convert(choice[0].value, choice[1].value);
 })
 
 function convert(from, to) {
-    let input = inptxt.value;
+    input = inptxt.value;
     if (input == '') return '';
     if (from == 'Celcius') {
         if (to == 'Kelvin')
@@ -24,14 +26,14 @@ function convert(from, to) {
         if (to == 'Kelvin') {
             return eval(parseFloat(celcius) + 273.15).toFixed(4) + ' K';
         }
-        return input + ' F'
+        return input + ' F';
     }
     if (from == 'Kelvin') {
         let celcius = eval(input - 273.15).toFixed(4);
         if (to == 'Celcius')
-            return celcius + ' C'
+            return celcius + ' C';
         if (to == 'Fahrenheit')
-            return eval(parseFloat(celcius) * 9 / 5 + 32).toFixed(4) + ' F'
-        return input + ' K'
+            return eval(parseFloat(celcius) * 9 / 5 + 32).toFixed(4) + ' F';
+        return input + ' K';
     }
 }
